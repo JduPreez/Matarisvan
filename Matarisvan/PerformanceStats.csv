@@ -1,0 +1,3 @@
+method,name,requests,failures,medianResponseTime,averageResponseTime,minResponseTime,maxResponseTime,averageContentSize,requestsPerSecond"
+"GET","/api/companies/1447484072",103,0,23000,23460,18259,30069,4018363,0.30
+"None","Total",103,0,23000,23460,18259,30069,4018363,0.30

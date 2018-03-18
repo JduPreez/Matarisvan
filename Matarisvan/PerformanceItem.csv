@@ -1,0 +1,2 @@
+Time | Log | LogLevel | Type | Resource | ResponseTime | ResponseLength
+2017-07-13T15:55:44Z | request.success | INFO | GET | /api/companies/1447484072 | 21596 | 4018363
