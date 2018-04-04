@@ -35,7 +35,7 @@ let getByCallingMethod logFile (callingMethod: string) =
 // Function "get" will draw a chart for each CallingMethod. So 1st group by CallingMethod,
 // and then group by correlation ID (almost like a nested "getByCallingMethod")
 // TODO: Fix this???
-let get logFile =
+(*let get logFile =
   Seq.groupBy (fun li -> li.CallingMethod) (load logFile)
   |> Seq.map (fun li -> fst li, snd li
                                 |> Seq.groupBy (fun li -> li.CorrelationId)
@@ -43,4 +43,4 @@ let get logFile =
                                                               |> Seq.toList
                                                               |> timespan
                                                               |> convert))
-                                |> Seq.filter (fun x -> x.ResponseTime > 100))
+                                |> Seq.filter (fun x -> x.ResponseTime > 100))*)
