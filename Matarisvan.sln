@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Matarisvan", "Matarisvan\Matarisvan.fsproj", "{537CEEA2-BFF1-46BA-B141-D46769E7A652}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Matarisvan.Test", "Matarisvan.Test\Matarisvan.Test.fsproj", "{46406ABE-38E5-4C1D-A47E-8A99AA759E4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{537CEEA2-BFF1-46BA-B141-D46769E7A652}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{537CEEA2-BFF1-46BA-B141-D46769E7A652}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{537CEEA2-BFF1-46BA-B141-D46769E7A652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46406ABE-38E5-4C1D-A47E-8A99AA759E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46406ABE-38E5-4C1D-A47E-8A99AA759E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46406ABE-38E5-4C1D-A47E-8A99AA759E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46406ABE-38E5-4C1D-A47E-8A99AA759E4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

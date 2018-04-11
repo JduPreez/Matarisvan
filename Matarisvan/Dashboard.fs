@@ -4,8 +4,8 @@ open System
 open FSharp.Charting
 open FSharp.Data
 open FSharp.Charting.ChartTypes
-open Matarisvan.Logs
 open Matarisvan.Performance
+open Matarisvan.Performance.Logs
 
 let view (performanceItems: PerformanceItem.Row seq) =
      lazy (performanceItems
