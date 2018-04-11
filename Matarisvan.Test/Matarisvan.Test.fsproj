@@ -63,7 +63,7 @@
     <Compile Include="PerformanceLogsTests.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
-    <Compile Include="Copy of Program.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Data">
