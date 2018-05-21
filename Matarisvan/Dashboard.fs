@@ -24,7 +24,7 @@ let view (performanceItems: PerformanceItem.Row seq) =
 let logFile = "C:\Projects\Matarisvan\Matarisvan\AppLogs.csv"
 
 let fromLogs =
-    (getByCallingMethod logFile)
+    getByCallingMethod(fromFile logFile)
     >> view
 
 let fromPerformance = fromLogs "blah"
