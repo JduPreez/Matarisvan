@@ -12,7 +12,7 @@ type MimeInfo =
       Html : string
       Word : string
       Powerpoint : string
-      Movie : stringz
+      Movie : string
       Audio : string
       Css : string }
 
@@ -59,7 +59,7 @@ let mapMimeInfo (info : MimeInfo) path isDirectory  =
         | ".mp3" -> info.Audio
         | _ -> info.Unkown
 
-let isImage = (mapMimeInfo filetypeMimeInfo) = filetypeMimeInfo.Image
+let isImage path = (mapMimeInfo filetypeMimeInfo path false) = filetypeMimeInfo.Image
 
 let determineIcon = mapMimeInfo iconMimeInfo
 

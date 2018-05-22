@@ -93,6 +93,14 @@ let generateFileRow path filename (fileStats : Node.Fs.Stats) =
     if Mime.isImage filename 
     then
         // TODO: ...
+        let image = Html.createImage path filename
+        let imageTd = Browser.document.createElement_td()
+        imageTd.colSpan <- 4.0
+        imageTd.appendChild(image) |> ignore
+
+        let name = Browser.document.createElement_td()
+        name.innerText <- image.src
+        Html.replaceChildren root [ imageTd; name ]
     else
         let icon = Browser.document.createElement_td()
         let name = Browser.document.createElement_td()
@@ -117,7 +125,7 @@ let generateFileRow path filename (fileStats : Node.Fs.Stats) =
         if not isDirectory then
             size.innerText <- sizeToHuman fileStats.size
 
-        Html.replaceChildren root [ icon; name; date; ``type``; size]
+        Html.replaceChildren root [ icon; name; date; ``type``; size ]
         
     root
 

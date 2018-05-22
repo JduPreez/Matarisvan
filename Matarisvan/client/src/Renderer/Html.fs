@@ -1,5 +1,6 @@
 module Html
 
+open System
 open Fable.Core
 open Fable.Import
 
@@ -29,7 +30,9 @@ let createLink filename =
     root.innerText <- filename
     root
 
-let createImage imageUrl =
+let createImage (path: string) filename =
+    // (path.Replace("/", "\\"))
+    let imageUrl = path //sprintf "%s/%s" path filename
     let root = Browser.document.createElement_img()
-    root.src <- 
+    root.src <- imageUrl
     root
