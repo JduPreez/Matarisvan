@@ -6,15 +6,16 @@ open FSharp.Data
 open FSharp.Charting.ChartTypes
 open Matarisvan.Performance
 open Matarisvan.Performance.Logs
+open Matarisvan.Domain
 
-let view (performanceItems: PerformanceItem.Row seq) =
+let view (performanceItems: PerformanceItem seq) =
      lazy (performanceItems
-            |> Seq.filter (fun x -> not (String.IsNullOrEmpty(x.Resource)))
+            |> Seq.filter (fun x -> not (String.IsNullOrEmpty(x.resource)))
             |> Seq.toList
-            |> List.groupBy<PerformanceItem.Row, string> (fun i -> i.Resource)            
-            |> List.map<string * PerformanceItem.Row list, ChartTypes.GenericChart> (fun i -> (List.map<PerformanceItem.Row, string * int> (fun x -> 
-                                                                                                                                                printfn "%O: %i" x.Time.Value x.ResponseTime
-                                                                                                                                                x.Time.Value.ToString(), x.ResponseTime/100) (snd i))
+            |> List.groupBy<PerformanceItem, string> (fun i -> i.resource)            
+            |> List.map<string * PerformanceItem list, ChartTypes.GenericChart> (fun i -> (List.map<PerformanceItem, string * int> (fun x -> 
+                                                                                                                                                printfn "%O: %i" x.time.Value x.responseTime
+                                                                                                                                                x.time.Value.ToString(), x.responseTime/100) (snd i))
                                                                                                 |> Seq.toList
                                                                                                 |> Chart.Column)
             |> Chart.Combine

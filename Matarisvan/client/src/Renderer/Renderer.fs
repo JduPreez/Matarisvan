@@ -92,8 +92,8 @@ let generateFileRow path filename (fileStats : Node.Fs.Stats) =
 
     if Mime.isImage filename 
     then
-        // TODO: ...
-        let image = Html.createImage path filename
+        // TODO: Clean this up so that we 
+        let image = Html.createImage path
         let imageTd = Browser.document.createElement_td()
         imageTd.colSpan <- 4.0
         imageTd.appendChild(image) |> ignore

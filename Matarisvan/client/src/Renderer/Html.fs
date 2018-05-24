@@ -30,9 +30,7 @@ let createLink filename =
     root.innerText <- filename
     root
 
-let createImage (path: string) filename =
-    // (path.Replace("/", "\\"))
-    let imageUrl = path //sprintf "%s/%s" path filename
+let createImage imagePath =
     let root = Browser.document.createElement_img()
-    root.src <- imageUrl
+    root.src <- imagePath
     root

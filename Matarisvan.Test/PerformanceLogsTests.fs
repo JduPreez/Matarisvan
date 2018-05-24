@@ -1,6 +1,7 @@
 ﻿module Matarisvan.Test.PerformanceLogsTests
 
 open Matarisvan.Performance.Logs
+open Matarisvan.Domain
 open Xunit
 open System
 
@@ -9,19 +10,10 @@ let random = new Random()
 let callingMethods = 10
 let correlationIDs = 10
 
-let spawn callingMethod item = LogItem.Row(random.Next(),                                               // id
-                                            Some (DateTime.Now.AddSeconds(float(random.Next(3, 100)))), // date
-                                            sprintf "%i" (random.Next()),                               // thread
-                                            sprintf "%i" (random.Next()),                               // level
-                                            sprintf "%i" (random.Next()),                               // logger
-                                            sprintf "%i" (random.Next()),                               // message
-                                            sprintf "%i" (random.Next()),                               // exception
-                                            sprintf "%i" (random.Next()),                               // application
-                                            sprintf "%i-%i" callingMethod item,                         // correlationId
-                                            sprintf "%i" callingMethod,                                 // callingMethod
-                                            sprintf "%i" (random.Next()),                               // user
-                                            decimal(random.NextDouble()),                               // percentProcessorTime
-                                            random.Next())                                              // availableMemoryMb
+let spawn callingMethod item = {  time = Some (DateTime.Now.AddSeconds(float(random.Next(3, 100))))
+                                  correlationId = sprintf "%i-%i" callingMethod item
+                                  callingMethod = sprintf "%i" callingMethod
+                                  logLevel = sprintf "%i" (random.Next()) }
 
 let fromMocked () = seq {
                       for a in 0 .. callingMethods-1 do
